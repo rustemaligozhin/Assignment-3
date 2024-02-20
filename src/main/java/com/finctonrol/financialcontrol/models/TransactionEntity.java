@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Entity
 @Table(name = "transactions")
 @Data
@@ -21,4 +19,11 @@ public class TransactionEntity {
     @JoinColumn(name = "userEntity_id", nullable = false)
     private UserEntity userEntity;
 
+    @ManyToOne
+    @JoinColumn(name = "budgetEntity_id")
+    private BudgetEntity budgetEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryEntity_id")
+    private CategoryEntity categoryEntity;
 }
